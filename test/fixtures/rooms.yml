@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roomname: MyString
+  roomintroduction: MyString
+  roomfee: 1
+  roomaddress: MyString
+
+two:
+  roomname: MyString
+  roomintroduction: MyString
+  roomfee: 1
+  roomaddress: MyString

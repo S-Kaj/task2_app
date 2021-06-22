@@ -13,3 +13,143 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+
+/* テンプレートのヘッダー部分 */
+header {
+    margin: -8px;
+    padding-top: 5px;
+    padding-left: 30px;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-R {
+    margin-top: 15px;
+    margin-right: 30px;
+}
+
+.btn-sign_in {
+    margin: 0 15px;
+    padding: 10px;
+    color: #fff;
+    font-style: bold;
+    background-color: #00ffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.btn-sign_up {
+    margin: 0 15px;
+    padding: 10px;
+    color: #fff;
+    font-style: bold;
+    background-color: #a9a9a9;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+
+/* テンプレートのフッター部分 */
+footer {
+    margin: -8px;
+    padding: 100px 0;
+    font-size: 0.8em;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+}
+
+/* トップページの検索窓部分 */
+.top-page {
+    margin: -8px;
+    height: 650px;
+    background-image: url(/assets/img_cover_top.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* おすすめのエリア 枠 */
+.reccomend-frame {
+    margin: 0 auto;
+    width: 1000px;
+    height: 600px;
+}
+
+/* おすすめのエリア 文字 */
+.recommend-title {
+    padding: 35px 0;
+    font-size: 24px;
+    font-style: bold;
+}
+
+.area1 {
+    margin: 10px;
+    width: 186px;
+    height: 360px;
+    background-image: url(/assets/img_tokyo.jpg);
+    background-size: cover;
+    background-position: top;
+    border-radius: 5px;
+    float: left;
+}
+
+.area2 {
+    margin: 10px;
+    width: 186px;
+    height: 360px;
+    background-image: url(/assets/img_osaka.jpg);
+    background-size: cover;
+    background-position: top;
+    border-radius: 5px;
+    float: left;
+}
+
+.area3 {
+    margin: 10px;
+    width: 186px;
+    height: 360px;
+    background-image: url(/assets/img_kyoto.jpg);
+    background-size: cover;
+    background-position: top;
+    border-radius: 5px;
+    float: left;
+}
+
+.area4 {
+    margin: 10px;
+    width: 186px;
+    height: 360px;
+    background-image: url(/assets/img_sapporo.jpg);
+    background-size: cover;
+    background-position: top;
+    border-radius: 5px;
+    float: left;
+}
+
+.area-text {
+    padding-top: 285px;
+    text-align: center;
+    text-shadow: 2px 2px 1px #000;
+    font-size: 24px;
+    font-style: bold;
+    color: #fff;
+}
+
+
+
+/* 部屋紹介 */
+.room_image {
+    width: 640px;
+}
+
+.posts_img {
+    width: 200px;
+}

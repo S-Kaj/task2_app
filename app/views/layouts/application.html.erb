@@ -11,6 +11,22 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-L">
+        <%= link_to image_tag('/assets/logo.png'), '/', class:'btn-logo' %>
+      </div>
+      <div class="header-R">
+        <% if user_signed_in? %>  <!- ログインユーザーへの表示 ->
+          ようこそ！<%= current_user.name %>さん        
+        <% else %>  <!- 非ログイン時の表示 ->
+          <%= link_to 'ログイン', '/users/sign_in/', class:'btn-sign_in' %>
+          <%= link_to '登録する', '/users/sign_up/', class:'btn-sign_up' %>
+        <% end %>          
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      © 2021 POTEPAN.INC.
+    </footer>
   </body>
 </html>

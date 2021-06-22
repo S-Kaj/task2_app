@@ -1,0 +1,16 @@
+<h2>ここにアカウント情報を載せる</h2>
+<p><%= @account %></p>
+
+<div>
+<h3>アカウント</h3>
+<hr>
+メールアドレス<br>
+<%= current_user.email %>
+<hr>
+パスワード<br>
+********
+<hr>
+
+<%= link_to '編集', '/users/edit/', class:'btn-edit' %> 
+
+</div>

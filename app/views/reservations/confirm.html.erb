@@ -1,0 +1,36 @@
+<h2>予約内容確認</h2>
+
+<h3>¥<%= @reservation.total_price %> / 日</h3>
+
+<dl>
+    <dt>開始日</dt>
+    <dd><%= @reservation.start_date %></dd>
+    <dt>終了日</dt>
+    <dd><%= @reservation.end_date %></dd>
+    <dt>人数</dt>
+    <dd><%= @reservation.persons %>人</dd>
+    <dt>日数</dt>
+    <dd><%= @reservation.many_days = ( @reservation.end_date.to_i - @reservation.start_date.to_i ) / 86400 %>日</dd>
+    <dt>合計金額</dt>
+    <dd><%= @reservation.total_price = @reservation.total_price * @reservation.persons * ( @reservation.end_date.to_i - @reservation.start_date.to_i ) / 86400 %>円</dd>
+</dl>
+
+
+<%= form_for @reservation do |f| %>
+    <%= f.hidden_field :start_date %>
+    <%= f.hidden_field :end_date %>
+    <%= f.hidden_field :persons %>
+    <%= f.hidden_field :many_days %>
+    <%= f.hidden_field :total_price %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :room_id %>
+    <%= f.submit '予約を確定する' %>
+<% end %>
+
+<%= form_for @reservation, method: :post, url: reservations_back_path do |form| %>
+    <%= form.hidden_field :start_date %>
+    <%= form.hidden_field :end_date %>
+    <%= form.hidden_field :persons %>
+    <%= form.submit 'ルーム詳細に戻る' %>
+<% end %>
+

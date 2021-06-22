@@ -1,0 +1,33 @@
+<h2>登録済みルーム一覧</h2>
+<p><%= @post %></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>ルーム画像</th>
+            <th>ルーム名</th>
+            <th>ルーム紹介</th>
+            <th>料金</th>
+            <th>作成日</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @rooms.each do |r| %>
+            <% if current_user.id == r.user_id %>
+                <tr>
+                    <td>
+                        <%= link_to r do %>
+                            <%= image_tag r.image.url, class: 'posts_img' %>
+                        <% end %>
+                    </td>
+                    <td><%= r.roomname %></td>
+                    <td><%= r.roomintroduction %></td>
+                    <td>¥<%= r.roomfee %></td>
+                    <td><%= r.created_at.to_s(:datetime_jp) %></td>
+                    <td><%= r.user_id %></td>
+                </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>

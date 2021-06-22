@@ -7,6 +7,9 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+// application.jsでjQueryを呼び出せるようにする
+require('jquery')
+// ここまで
 
 Rails.start()
 Turbolinks.start()
