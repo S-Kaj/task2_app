@@ -1,61 +1,55 @@
-<table>
-    <tr>
-        <td>
-            <div>
-                <% if @room.image? %>
-                    <%= image_tag @room.image.url, class:'room_image' %>
-                <% else %>
-                    ※画像無し※
-                <% end %>
-            </div>
-                <table>
-                    <tr>
-                        <td>※ここに<br>アイコン</td>
-                        <td>
-                            <%= @room.roomname %><br>
-                            <%= @room.roomaddress %>
-                        </td>
-                    </tr>
-                </table>
-                <hr>
-                ◆ルーム紹介◆<br>
-                <%= @room.roomintroduction %>
-                <hr>
-        </td>
-        <td>
-            <div>
-                ¥<%= @room.roomfee %> / 日<br>
-                開始日<br>
-                ※ここにカレンダー※<br>
-                終了日<br>
-                ※ここにカレンダー※<br>
-                人数<br>
-                ※ここにフォーム※<br>
-                <※ここに予約するボタン※>
-            </div>
-        </td>
-    </tr>
-</table>
-
-
-<h2>予約フォーム(仮)</h2>
-現在のユーザーID/ルームID確認<br>
-<%= current_user.id %>/<%= @room.id %>
-
-<%= form_for @reservation, method: :post, url: '/reservations/confirm' do |form| %>
-    <dl>
-    <h3>¥ <%= @room.roomfee %> / 日</h3>
-        <dt>開始日</dt>
-        <dd><%= form.date_field :start_date %></dd>
-        <dt>終了日</dt>
-        <dd><%= form.date_field :end_date %></dd>
-        <dt>人数</dt>
-        <dd><%= form.number_field :persons %></dd>
-    </dl>
-        <% @reservation.total_price = @room.roomfee %>
-        <%= form.hidden_field :total_price %>
-        <%= form.hidden_field :user_id, value: current_user.id %>
-        <%= form.hidden_field :room_id, value: @room.id %>
-
-    <%= form.submit '予約する(確認画面へ移動します)' %>
-<% end %>
+<article>
+    <table class="no-border-table">
+        <tr>
+            <td class="no-border-table">
+                <div>
+                        <%= image_tag @room.image.url, class:'room_image' %>
+                </div>
+                    <table class="no-border-table">
+                        <tr>
+                            <td class="no-border-table">
+                                <!- ルーム登録者のアイコン表示 ->
+                                    <% @users.each do |u| %>
+                                        <% if u.id == @room.user_id %>
+                                            <img src=<%= u.icon %> class = "icon_image"><br>
+                                        <% end %>
+                                    <% end %>                        
+                            </td>
+                            <td class="no-border-table">
+                                <div class="room-section">
+                                    <span class="room-name"><%= @room.roomname %></span>
+                                    <br>
+                                    <span class="room-address"><%= @room.roomaddress %></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <span class="sub-title">ルーム紹介</span>
+                    <br>
+                    <%= @room.roomintroduction %>
+                    <hr>
+            </td>
+            <td class="no-border-table">
+                <div class="reservation-form">
+                    <%= form_for @reservation, method: :post, url: '/reservations/confirm' do |form| %>
+                        <dl>
+                        <h3>¥ <%= @room.roomfee %> / 日</h3>
+                            <dt>開始日</dt>
+                            <dd><%= form.date_field :start_date %></dd>
+                            <dt>終了日</dt>
+                            <dd><%= form.date_field :end_date %></dd>
+                            <dt>人数</dt>
+                            <dd><%= form.number_field :persons %></dd>
+                        </dl>
+                            <%= form.hidden_field :total_price %>
+                            <%= form.hidden_field :user_id, value: current_user.id %>
+                            <%= form.hidden_field :room_id, value: @room.id %>
+                    
+                        <%= form.submit '予約する(確認画面へ移動します)' %>
+                    <% end %>
+                </div>
+            </td>
+        </tr>
+    </table>
+</article>

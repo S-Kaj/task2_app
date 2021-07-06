@@ -16,11 +16,9 @@ class UsersController < ApplicationController
 #    end
 
   def account
-    @account = "accountアクション実行中😀"
   end
 
   def profile
-    @profile = "profileアクション実行中☆"
   end
 
 end

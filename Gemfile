@@ -65,3 +65,9 @@ gem 'devise-i18n-views'
 # 画像アップロード
 gem 'carrierwave'
 gem 'mini_magick'
+
+# 検索機能
+gem 'ransack'
+
+# jQuery
+gem 'jquery-rails'

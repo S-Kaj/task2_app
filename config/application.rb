@@ -10,6 +10,7 @@ module Task2App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.action_controller.permit_all_parameters = true
     config.i18n.default_locale = :ja
 
     # Configuration for the application, engines, and railties goes here.
@@ -19,5 +20,6 @@ module Task2App
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.time_zone = 'Tokyo'
   end
 end

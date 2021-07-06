@@ -1,16 +1,15 @@
-<h2>ここにアカウント情報を載せる</h2>
-<p><%= @account %></p>
+<h1>アカウント</h1>
 
-<div>
-<h3>アカウント</h3>
-<hr>
-メールアドレス<br>
-<%= current_user.email %>
-<hr>
-パスワード<br>
-********
-<hr>
-
-<%= link_to '編集', '/users/edit/', class:'btn-edit' %> 
-
-</div>
+<article>
+    <hr>
+    <p class="sub-title">メールアドレス</p>
+    <%= current_user.email %>
+    <hr>
+    <p class="sub-title">パスワード</p>
+    ********
+    <hr>
+    <br>
+    <div class="btn-design">
+        <%= link_to '編集', '/users/edit/' %> 
+    </div>
+</article>

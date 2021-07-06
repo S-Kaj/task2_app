@@ -1,25 +1,25 @@
-
-<h2>ルーム登録情報</h2>
-<hr>
-
-<%= form_with(model: Room, local: true) do |f| %>
-    <p>ルーム名</p>
-    <%= f.text_field :roomname %>
-    <hr>
-    <p>ルーム紹介</p>
-    <%= f.text_field :roomintroduction %>
-    <hr>
-    <p>料金</p>
-    <%= f.text_field :roomfee %>
-    <hr>
-    <p>住所</p>
-    <%= f.text_field :roomaddress %>
-    <hr>
-
-    <p>ルーム画像</p>
-    <%= f.file_field :image %>
-    <br>
-    <%= f.hidden_field :user_id, value:current_user.id %>
-    <br>
-    <%= f.submit "登録" %>
-<% end %>
+<h1>ルーム登録情報</h1>
+<article>
+    <%= form_with(model: Room, local: true) do |f| %>
+        <hr>
+        <p class="sub-title">ルーム名</p>
+        <%= f.text_field :roomname %>
+        <hr>
+        <p class="sub-title">ルーム紹介</p>
+        <%= f.text_field :roomintroduction %>
+        <hr>
+        <p class="sub-title">料金</p>
+        <%= f.text_field :roomfee %>
+        <hr>
+        <p class="sub-title">住所</p>
+        <%= f.text_field :roomaddress %>
+        <hr>
+        <p class="sub-title">ルーム画像</p>
+        <%= f.file_field :image %>
+        <br>
+        <%= f.hidden_field :user_id, value:current_user.id %>
+        <hr>
+        <br>
+        <%= f.submit "登録", class:'btn-design' %>
+    <% end %>
+</article>

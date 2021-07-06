@@ -3,52 +3,9 @@
     <% if flash.notice %>
         <p class="notice"><%= flash.notice %></p>
     <% end %>
-        ここに検索窓を作る
-        <br>
-        <%= link_to 'ログアウト', '/users/sign_out/', method: :delete %>
-        <br>
-        <br>
-        =ここにとりあえずドロップアウトメニュー=<br>
-        <%= link_to 'ルーム登録', '/rooms/new/' %> <br>
-        <%= link_to '予約済みルーム一覧', '/reservations/' %> <br>
-        <%= link_to '登録済みルーム一覧', '/rooms/posts/' %> <br>
-        <%= link_to '設定', '/users/account/' %> <br>
-        <%= link_to 'ログアウト', '/users/sign_out/', method: :delete %>
 
-    <hr>
-        <h3><%= link_to '予約テスト用リンク', 'rooms/22/' %></h3>
-    <hr>
-
-    <table>
-        <% @users.each do |user| %>
-            <tr>
-                <td><%= user.id %></td>
-                <td><%= user.name %></td>
-                <td><%= user.email %></td>
-            </tr>
-        <% end %>
-    </table>
-
-
+<section class="section-top">
+    <div class="btn-design">
+        <%= link_to 'ルームを検索する', '/rooms/' %>
     </div>
-    
-        <div class="reccomend-frame">
-            <p class="recommend-title">おすすめのエリア</p>
-
-            <div class="reccomend-area">
-                <div class="area1">
-                    <p class="area-text">東京</p>
-                </div>
-                <div class="area2">
-                    <p class="area-text">大阪</p>
-                </div>
-                <div class="area3">
-                    <p class="area-text">京都</p>
-                </div>
-                <div class="area4">
-                    <p class="area-text">札幌</p>
-                </div>
-            
-                
-            </div>
-        </div>
+</section>

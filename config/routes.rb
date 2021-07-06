@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'rooms/posts', to: 'rooms#posts'
 
   resources :rooms
-
   resources :reservations
 
   post 'reservations/confirm' # 確認画面

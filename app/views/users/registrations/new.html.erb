@@ -1,43 +1,53 @@
-# Sign up画面
-<h2>Sign upのページ</h2>
+<h1>アカウント新規登録</h1>
 
-新しいアカウントを作成
+<article>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+  <hr>
+  <!- ユーザー名 ->
+    <div class="field">
+      <%= f.label :アカウント名 %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <hr>
+  <!- メールアドレス ->
+    <div class="field">
+      <%= f.label :Eメールアドレス %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
 
-<!- ユーザー名 ->
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <hr>
+  <!- パスワード ->
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上にしてください)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-<!- メールアドレス ->
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <hr>
+  <!- パスワードの確認 ->
+    <div class="field">
+      <%= f.label :パスワードの確認 %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
 
-<!- パスワード ->
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-<!- パスワードの確認 ->
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
+  <hr>
+  <!- アイコンのアップロード ->
+    <div class="field">
+      <%= f.label :アイコン %><br/>
+      <%= f.file_field :icon %>
+    </div>
+    
+  <hr>
   <div class="actions">
-    <%= f.submit "新しいアカウントを作成" %>
+    <%= f.submit "アカウント作成", class: 'btn-design' %>
   </div>
+  <br>
+    <%= link_to "すでにアカウントをお持ちの方はログイン", new_user_session_path, class: 'btn-design' %>
+  <% end %>
 
-  <%= link_to "すでにアカウントをお持ちの方はログイン", new_user_session_path %>
-<% end %>
-
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</article>

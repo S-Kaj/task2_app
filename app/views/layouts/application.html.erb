@@ -17,7 +17,24 @@
       </div>
       <div class="header-R">
         <% if user_signed_in? %>  <!- ログインユーザーへの表示 ->
-          ようこそ！<%= current_user.name %>さん        
+          <div class="header-name">
+            ようこそ！<%= current_user.name %>さん
+          </div>
+          <!- メニュー ->
+            <nav class="menu">
+            　<ul class="menu__ul">
+            　　<li class="menu__ul--item"><%= link_to 'ルーム登録', '/rooms/new/' %></li>
+            　　<li class="menu__ul--item"><%= link_to '予約済みルーム一覧', '/reservations/' %></li>
+            　　<li class="menu__ul--item"><%= link_to '登録済みルーム一覧', '/rooms/posts/' %></li>
+            　　<li class="menu__ul--item"><%= link_to '設定', '/users/account/' %></li>
+            　　<li class="menu__ul--item"><%= link_to 'ログアウト', '/users/sign_out/', method: :delete %></li>
+            　</ul>
+            </nav>
+          <!- アイコン ->
+            <div class="icon">
+          　　<img src=<%= current_user.icon %> class = "icon_image">
+            </div>
+            
         <% else %>  <!- 非ログイン時の表示 ->
           <%= link_to 'ログイン', '/users/sign_in/', class:'btn-sign_in' %>
           <%= link_to '登録する', '/users/sign_up/', class:'btn-sign_up' %>

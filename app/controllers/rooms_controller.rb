@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
   def index
+    @q = Room.ransack(params[:q])
+    @rooms = @q.result(distinct: true)
   end
 
   def new # ルーム情報の登録
@@ -17,8 +19,10 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @users = User.all # アイコンを表示させるための記述
     @room = Room.find(params[:id])
     @reservation = Reservation.new
+    @reservation.total_price = @room.roomfee  # ルーム料金をとりあえず合計金額に入れる
   end
 
   def edit
@@ -30,10 +34,8 @@ class RoomsController < ApplicationController
   def destroy
   end
 
-
   def posts
-    @post = "postアクション実行中"
-#    @user = User.find(params[:id])
     @rooms = Room.all
   end
+  
 end

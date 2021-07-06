@@ -16,8 +16,9 @@
 
  
 
-/* テンプレートのヘッダー部分 */
+/* ヘッダー部分 */
 header {
+    height: 100px;
     margin: -8px;
     padding-top: 5px;
     padding-left: 30px;
@@ -27,20 +28,27 @@ header {
     justify-content: space-between;
 }
 
+.header-L {
+    padding-top: 10px;
+}
+
 .header-R {
-    margin-top: 15px;
-    margin-right: 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+.header-name {
+    margin-right: 75px;
 }
 
 .btn-sign_in {
     margin: 0 15px;
     padding: 10px;
     color: #fff;
-    font-style: bold;
-    background-color: #00ffff;
+    font-weight: bold;
+    background-color: #4998ff;
     text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     text-shadow: 2px 2px 2px #000;
 }
 
@@ -48,11 +56,10 @@ header {
     margin: 0 15px;
     padding: 10px;
     color: #fff;
-    font-style: bold;
+    font-weight: bold;
     background-color: #a9a9a9;
     text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     text-shadow: 2px 2px 2px #000;
 }
 
@@ -67,7 +74,7 @@ footer {
     background-color: #000;
 }
 
-/* トップページの検索窓部分 */
+/* トップページ部分 */
 .top-page {
     margin: -8px;
     height: 650px;
@@ -76,18 +83,15 @@ footer {
     background-repeat: no-repeat;
 }
 
-/* おすすめのエリア 枠 */
+.section-top {
+    padding: 100px 0 400px 100px;
+}
+
+/* おすすめのエリア */
 .reccomend-frame {
     margin: 0 auto;
     width: 1000px;
     height: 600px;
-}
-
-/* おすすめのエリア 文字 */
-.recommend-title {
-    padding: 35px 0;
-    font-size: 24px;
-    font-style: bold;
 }
 
 .area1 {
@@ -139,17 +143,131 @@ footer {
     text-align: center;
     text-shadow: 2px 2px 1px #000;
     font-size: 24px;
-    font-style: bold;
+    font-weight: bold;
     color: #fff;
 }
 
 
 
-/* 部屋紹介 */
-.room_image {
-    width: 640px;
+
+
+
+/* ユーザーアイコンの形状設定 */
+.icon_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    object-fit: cover;
 }
 
-.posts_img {
+/* ハンバーガーメニュー */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-100%);
+    z-index: 2;
+}
+
+.menu__ul {
     width: 200px;
+    margin: 70px 0 0 auto;
+    padding: 0;
+    background: gray;
+}
+
+.menu__ul--item {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.menu__ul--item a {
+    display: block;
+    padding: 0;
+    color: #fff;
+    text-shadow: 2px 2px 1px #000;
+    text-decoration: none;
+}
+
+.active {
+    transform: translateY(0%);
+}
+
+.icon {
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+  }
+
+
+
+
+/* 全ページ一括指定 */
+/* 文字 */ 
+/* タイトル文字 */
+h1 {
+    padding: 25px 15px;
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px gray;
+    border-top: 3px solid #4998ff;
+    border-bottom: 3px solid #4998ff;
+}
+
+.sub-title {
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+/* テーブルタグ */
+table, td {
+    border-top: 2px solid skyblue;
+}
+table {
+    border-collapse: collapse;
+}
+
+/* 表の見出し */
+thead, th {
+    padding: 20px 10px;
+    font-size: 14pt;
+    border-left: 2px solid #fff;
+    background-color: #a3fff3;
+}
+
+/* 上下左右の余白 */
+article {
+    padding: 30px;
+}
+
+/* <hr> */
+hr {
+    background-color: #fff;
+    border-top: 2px dashed #8c8b8b
+}
+
+/* 登録ボタン */
+.btn-design {
+    width: 180px;
+    padding: 5px;
+    color: #fff;
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: #4998ff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* aタグ */
+a {
+    color: #fff;
+    font-size: 14pt;
+    text-decoration: none;
 }
