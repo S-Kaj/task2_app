@@ -1,0 +1,15 @@
+<h1>アカウント</h1>
+
+<article>
+    <hr>
+    <p class="sub-title">メールアドレス</p>
+    <%= current_user.email %>
+    <hr>
+    <p class="sub-title">パスワード</p>
+    ********
+    <hr>
+    <br>
+    <div class="btn-design">
+        <%= link_to '編集', '/users/edit/' %> 
+    </div>
+</article>

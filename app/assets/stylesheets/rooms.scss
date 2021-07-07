@@ -1,0 +1,39 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/* 部屋紹介 */
+.room_image {
+    max-width: 640px;
+    margin-bottom: 20px;
+}
+
+.posts_img {
+    width: 200px;
+}
+
+.no-border-table {
+    border: 0px none;
+}
+
+.room-section {
+    margin: 0 20px;
+}
+
+.room-name {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.room-address {
+    font-size: 11pt;
+    color: gray;
+}
+
+.reservation-form {
+    margin-left: 30px;
+    padding: 20px;
+    border: 3px solid gray;
+    border-radius: 10px;
+}

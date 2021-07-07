@@ -1,0 +1,53 @@
+<h1>アカウント新規登録</h1>
+
+<article>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+  <hr>
+  <!- ユーザー名 ->
+    <div class="field">
+      <%= f.label :アカウント名 %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+  <hr>
+  <!- メールアドレス ->
+    <div class="field">
+      <%= f.label :Eメールアドレス %><br />
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+
+  <hr>
+  <!- パスワード ->
+    <div class="field">
+      <%= f.label :パスワード %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> 文字以上にしてください)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+  <hr>
+  <!- パスワードの確認 ->
+    <div class="field">
+      <%= f.label :パスワードの確認 %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+  <hr>
+  <!- アイコンのアップロード ->
+    <div class="field">
+      <%= f.label :アイコン %><br/>
+      <%= f.file_field :icon %>
+    </div>
+    
+  <hr>
+  <div class="actions">
+    <%= f.submit "アカウント作成", class: 'btn-design' %>
+  </div>
+  <br>
+    <%= link_to "すでにアカウントをお持ちの方はログイン", new_user_session_path, class: 'btn-design' %>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</article>
